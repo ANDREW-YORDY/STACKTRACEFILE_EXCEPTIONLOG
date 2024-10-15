@@ -1,19 +1,19 @@
 package com.adr.service;
 
-import com.adr.service.ExceptionDetailsHandler;
-
 public class ExceptionHandlingControler 
 {
     
     public ExceptionDetailsHandler ctrDetll;
-    
+    public StackTraceHandler       ctrStack;
+
+
     public void runException()
     {
         try {
             induceError();
         } catch (Exception e) {
-            e.printStackTrace();
-
+            //e.printStackTrace();
+            ctrStack.getStackTrace(e);
         }
     }
     
