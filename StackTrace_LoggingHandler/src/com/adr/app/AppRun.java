@@ -1,13 +1,14 @@
 package com.adr.app;
 
 import com.adr.service.ExceptionHandlingControler;
-import static java.lang.String.valueOf;
+import com.adr.service.logger.ExceptionLogger;
 
 public class AppRun {
 
     public static void main(String[] args) {
 
-        ExceptionHandlingControler ctr = new ExceptionHandlingControler();
+        ExceptionLogger logger = new ExceptionLogger();
+        ExceptionHandlingControler ctr = new ExceptionHandlingControler(logger);
         ctr.runException();
 
     }
