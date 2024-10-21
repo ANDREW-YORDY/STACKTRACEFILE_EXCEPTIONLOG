@@ -1,5 +1,6 @@
 package com.adr.service;
 
+<<<<<<< HEAD
 import com.adr.service.handlers.StackTraceHandler;
 import com.adr.service.logger.ExceptionLogger;
 
@@ -25,6 +26,22 @@ public class ExceptionHandlingControler {
         } catch (NullPointerException e) {
             // Procesamos la excepción de manera estructurada;
             processException(e);
+=======
+public class ExceptionHandlingControler 
+{
+    
+    public ExceptionDetailsHandler ctrDetll;
+    public StackTraceHandler       ctrStack;
+
+
+    public void runException()
+    {
+        try {
+            induceError();
+        } catch (Exception e) {
+            //e.printStackTrace();
+            ctrStack.getStackTrace(e);
+>>>>>>> 3647d268baa939fc442b5cd275b938d9f498ea09
         }
     }
     
